@@ -42,7 +42,7 @@ function setup() {
 	treeObj=new tree(1050,580);
 	groundObject=new ground(width/2,600,width,20);
   //create launcherObject here
-
+  
 
 	Engine.run(engine);
 }
@@ -71,8 +71,12 @@ function draw() {
 
   stoneObj.display();
   groundObject.display();
+
+  
   launcherObject.display();
-  launcherObject=new launcher(stoneObj.body,{x:235,y:420});
+  launcherObject = new launcher(stoneObj.body,{x:235,y:420});
+  
+  
     
 
 
@@ -91,12 +95,12 @@ function draw() {
 }
 
 function mouseDragged(){
-  Matter.body.setPosition(stoneObj.body,{x:mouseX, y: mouseY});
+  Matter.body.setPosition(launcherObject.body,{x:mouseX, y: mouseY});
 }
 
 
 function mouseReleased(){
-  slingshot.fly();
+  launcherObject.fly();
 }
 
 
